@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLops project demo</title>
-
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <title>MLOps project demo</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="assets/css/screen.css">
-
+    
     <script src="assets/js/script.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>MLOps project demo</h1>
-        <div class="drawing-board-container">
-            <button id="clear-drawing-board">Clear</button>
-            <canvas id="drawing-board", width="64", height="64"></canvas>    
+        <div class="header">
+            <h1>MLOps project demo</h1>
+            <p>Draw a digit (0-9) and see the prediction</p>
         </div>
-        <div class="prediction-container"></div>
+        
+        <div class="content">
+            <div class="drawing-section">
+                <div class="canvas-container">
+                    <canvas id="drawing-board" width="512" height="512"></canvas>
+                    <div class="canvas-overlay">
+                        <p>Draw a digit here (0-9)</p>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="clear-drawing-board">
+                        <i class="fas fa-eraser"></i> Clear Canvas
+                    </button>
+                </div>
+            </div>
+            
+            <div class="prediction-section">
+                <h2>Prediction Result</h2>
+                <div class="prediction-result">
+                    <div class="digit-display">?</div>
+                    <div class="confidence">Draw something to begin</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
