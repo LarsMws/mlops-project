@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/screen.css">
     
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/helpers.js"></script>
 </head>
 <body>
     <div class="container">
@@ -21,7 +23,8 @@
         <div class="content">
             <div class="drawing-section">
                 <div class="canvas-container">
-                    <canvas id="drawing-board" width="512" height="512"></canvas>
+                    <!-- actual size for preds is 28x28 but this would be quite blurry when drawing, so we scale down afterwards instead  -->
+                    <canvas id="drawing-board" width="560" height="560"></canvas>
                     <div class="canvas-overlay">
                         <p>Draw a digit here (0-9)</p>
                     </div>

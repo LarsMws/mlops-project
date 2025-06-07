@@ -143,7 +143,7 @@ class DrawingBoard {
         this.canvasOverlay.classList.remove('hidden');
     }
     
-    updatePrediction(text = null) {
+    async updatePrediction(text = null) {
         const predictionElement = document.querySelector('.digit-display');
         const confidenceElement = document.querySelector('.confidence');
         
@@ -156,11 +156,18 @@ class DrawingBoard {
         }
         
         // Simulate a prediction
-        const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        const randomDigit = digits[Math.floor(Math.random() * digits.length)];
-        const confidence = (Math.random() * 0.5 + 0.5).toFixed(2); // 50-100%
+        const imageData = this.getProcessedImage();
+        // const [pred, proba] = getMockPrediction();
+        const [pred, proba] = await getModelPrediction(imageData);
         
-        predictionElement.textContent = randomDigit;
-        confidenceElement.textContent = `Confidence: ${(confidence * 100).toFixed(1)}%`;
+        predictionElement.textContent = pred;
+        confidenceElement.textContent = `Confidence: ${(proba * 100).toFixed(1)}%`;
     }
+
+    getProcessedImage() {
+        let data = resizeImage(this.canvas);
+        data = grayscaleImage(data);
+        return data;
+    }
+
 }
