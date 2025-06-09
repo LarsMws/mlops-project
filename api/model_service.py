@@ -28,10 +28,12 @@ def get_model_prediction(pixel_values):
     input_tensor = tf.reshape(input_tensor, (-1, 28, 28, 1)) 
     
     raw_output = model(input_tensor)
-    # print(raw_output)
-    predictions = raw_output["activation_7"]
+    print(raw_output)
+    predictions = raw_output["activation_3"]
     
-    predicted_class = tf.argmax(predictions, axis=1).numpy()[0]
+    predicted_class = label_mapper(
+        tf.argmax(predictions, axis=1).numpy()[0]
+    )
     probability = tf.reduce_max(predictions, axis=1).numpy()[0]
 
     print(predicted_class, probability)
@@ -47,3 +49,8 @@ def validate_input(pixel_values):
     actual = len(pixel_values)
     if expected != actual:
         raise Exception(f"Wrong input size:\n- Expected: {expected}\n- Actual: {actual}")
+    
+
+def label_mapper(prediction):
+    labels = [2, 7, 8]
+    return labels[prediction]

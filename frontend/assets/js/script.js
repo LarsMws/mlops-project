@@ -43,7 +43,7 @@ class DrawingBoard {
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
         this.ctx.strokeStyle = "#000000";
-        this.ctx.lineWidth = 12;
+        this.ctx.lineWidth = 24;
         this.ctx.lineJoin = "round";
         this.ctx.lineCap = "round";
     }
@@ -167,6 +167,7 @@ class DrawingBoard {
     getProcessedImage() {
         let data = resizeImage(this.canvas);
         data = grayscaleImage(data);
+        data = inverseImage(data);
         return data;
     }
 

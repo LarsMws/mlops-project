@@ -25,3 +25,11 @@ function grayscaleImage(imageData) {
     }
     return grayscale;
 }
+
+
+function inverseImage(pixelArray) {
+    for (let i = 0; i < pixelArray.length; i++) {
+        pixelArray[i] = 255 - pixelArray[i];
+    }
+    return pixelArray;
+}
