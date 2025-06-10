@@ -3,6 +3,7 @@ FROM nginx:alpine
 # remove default nginx static assets
 RUN rm -rf /usr/share/nginx/html/*
 
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY . /usr/share/nginx/html
 
 # Replace dev config with prod config
