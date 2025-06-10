@@ -1,4 +1,4 @@
-name: Build and Push Docker Images
+name: CI/CD Pipeline
 
 on:
   push:
@@ -6,9 +6,8 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  build-and-push-docker:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,3 +31,17 @@ jobs:
           context: ./frontend
           push: true
           tags: larsmeeuws/mlops-frontend:latest
+
+
+  deploy-kubernetes:
+    runs-on: self-hosted
+    needs: build-and-push-docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rollout Restart API
+        run: kubectl rollout restart deployment/api
+
+      - name: Rollout Restart Frontend
+        run: kubectl rollout restart deployment/frontend
