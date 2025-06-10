@@ -17,6 +17,7 @@ spec:
           image: larsmeeuws/mlops-frontend:latest
           ports:
             - containerPort: 80
+          imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
