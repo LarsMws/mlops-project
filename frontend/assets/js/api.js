@@ -1,9 +1,7 @@
-const BASE_URL = "http://127.0.0.1:5000";
-
 async function getModelPrediction(imageData) {
     const jsonData = JSON.stringify(Array.from(imageData));
 
-    return await fetch(`${BASE_URL}/predict`, {
+    return await fetch(`${CONFIG.BASE_URL}/predict`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
