@@ -18,6 +18,13 @@ spec:
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
+          volumeMounts:
+            - name: model-volume
+              mountPath: /app/models/
+      volumes:
+        - name: model-volume
+          persistentVolumeClaim:
+            claimName: model-pvc
 ---
 apiVersion: v1
 kind: Service
