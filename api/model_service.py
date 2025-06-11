@@ -5,7 +5,7 @@ import numpy as np
 import random
 
 REQUIRED_SIZE = 28
-# model = TFSMLayer("./models/mnist-cnn", call_endpoint="serving_default")
+model = TFSMLayer("./models/mnist-cnn", call_endpoint="serving_default")
 
 
 # Used for debugging
