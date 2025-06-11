@@ -6,9 +6,9 @@ spec:
   capacity:
     storage: 1Gi
   accessModes:
-    - ReadWriteMany  # or ReadWriteMany if needed
+    - ReadWriteOnce
   hostPath:
-    path: C:\Users\Lars\Documents\school\MLOps\project\models
+    path: /Users/Lars/Documents/school/MLOps/project/models  # Internally adds `/mnt/host/c/` before this string
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -16,7 +16,7 @@ metadata:
   name: model-pvc
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
