@@ -1,20 +1,22 @@
-from flask import Flask, jsonify, request
-from flask_cors import CORS
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 from model_service import get_model_prediction
 
-app = Flask(__name__)
-CORS(app)
+app = FastAPI()
 
-@app.route("/")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust as needed
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
 def hello():
-    return jsonify(message="Hello, World!")
-
+    return {"message": "Hello, World!"}
 
 @app.post("/predict")
-def predict():
-    pixel_values = request.get_json()
+async def predict(request: Request):
+    pixel_values = await request.json()
     return get_model_prediction(pixel_values)
-
-
-if __name__ == "__main__":
-    app.run(debug=False)
