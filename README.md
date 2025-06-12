@@ -170,7 +170,7 @@ Once the new release is pushed to the repository, all other deployment steps are
 
 ## Reflection
 ### Things that went well
-> TODO (Sadiksha)
+creating components, working with github cli running pipelies, github actions to do everythihing manually.
 
 ### Problems we ran into
 We originally planned to use a persistent volume for the model and mount this to the api's deployment. This way, we could've updated the model locally (using a github runner) without having to rebuild the api's Docker image. It also seemed more logical to keep the model separate from the rest of the codebase, so we wouldn't run into synchronization issues. Unfortunately, we ran into a problem with the file mounts which we couldn't seem to figure out. For some reason, the k8s distribution from Docker Desktop tried to resolve the given `hostPath` on some random debian distro (not docker-desktop), which didn't have access to the host's filesystem. When debugging, we did notice that `/mnt/host/c/` was added before the given path internally, which would be the correct file path for the docker-desktop distro. For this reason, we used an alternative strategy as described above.
@@ -178,4 +178,5 @@ We originally planned to use a persistent volume for the model and mount this to
 
 ### What we learned
 - Learned that we should use a linux VM for Docker in the future
-> TODO (Sadiksha)
+
+-Sometimes, even after deleting a compute instance, Azure doesn’t fully remove it internally. I couldn’t create a new compute in the ml-ops-project because I had previously used a repository called mlops-demo. Even though I had deleted everything, Azure still thought the compute was in use there. I solved it by manually deleting the compute from the mlops-demo project. It took me a full day to figure this out.
