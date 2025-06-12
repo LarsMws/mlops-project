@@ -15,15 +15,61 @@ Our project focuses on deploying a handwritten digit classification model traine
 ## Task 1: Cloud AI Services
 ### Dataset 
 - mnist dataset 2, 7, 8 all of them around 1450 images of png
+
 - ![image](https://github.com/user-attachments/assets/ed775aad-5fea-48f4-8d9b-fc8854f8c402) 
 
 
 ### Preprocessing
 This script takes a folder full of .png images and prepares them for training a simple AI model. It goes through each image, removes any transparency, shrinks it down to 28 by 28 pixels, and saves it as a .jpg file in a new folder. This makes the images ready to be used in models like those that recognize handwritten digits
 
+![image](https://github.com/user-attachments/assets/e78c092a-3cb8-4b6d-8e65-621a709a697b)
+
+
 ### train-testsplit
 This script takes one or more folders of .jpg images (each folder representing a different digit), mixes the images randomly, and splits them into training and testing sets based on the percentage you give (we have used 80 training and 20 as usual). It then saves the images into new folders containing the label name. 
 
+![image](https://github.com/user-attachments/assets/aeacb9f2-296b-40fb-b149-4455fb29742c)
+
+![image](https://github.com/user-attachments/assets/13e5bec2-2a3d-44dc-b525-f97f20ea8f33)
+
+![image](https://github.com/user-attachments/assets/bea7b8d4-257a-45d9-b5e3-b2d205a1120b)
+
+
+## Components and pipelines
+First made indiviudal components and pipelines and then downloaded it and did the whole pipeline process and automation through cli.
+
+### Individual components, pipeline and successful jobs 
+convert_resize_images
+![image](https://github.com/user-attachments/assets/67c2438b-ca4c-4b05-a1dd-7a0ba82fcd22)
+
+![image](https://github.com/user-attachments/assets/463dbe14-1ab0-40ff-ac0c-c05f88f0eee6)
+
+
+mnist_data_split
+![image](https://github.com/user-attachments/assets/b729b6d9-00d9-4ec7-a6b9-5205fb7b5bdb)
+
+![image](https://github.com/user-attachments/assets/f6589bd8-4654-474b-b2d3-ed6410ada515)
+
+
+
+mnist_training
+![image](https://github.com/user-attachments/assets/49e6d3a7-a049-41a0-8e4b-f911829bcbf2)
+
+![image](https://github.com/user-attachments/assets/e5251652-c74b-4813-ab94-b09b430e7d21)
+
+
+Training ephos and confusion matrix and accuracy
+Did 20 ephocs
+![image](https://github.com/user-attachments/assets/c4c45907-4fcf-4136-a1e9-5d13cdc757e4)
+
+High accuracy as you can see in the front in that it can recognize very good the numbers.
+
+### full pipeline
+components
+![image](https://github.com/user-attachments/assets/f7aaca98-eeea-4c59-acc9-1d8b04d526ac)
+
+Working pipeline
+![image](https://github.com/user-attachments/assets/a4f8f2e5-93a8-4cc7-859d-1b42f1d0637f)
 
 
 ## Task 2: Frontend, FastAPI and Deployment
