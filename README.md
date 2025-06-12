@@ -34,6 +34,8 @@ This script takes one or more folders of .jpg images (each folder representing a
 
 ![image](https://github.com/user-attachments/assets/bea7b8d4-257a-45d9-b5e3-b2d205a1120b)
 
+### Training
+Made our own custom made CNN built with Keras with less regualization. The CNN has 1 input layer, 2 hidden convolutional blocks, 1 fully connected hidden layer, and 1 output layer, with regularization using 3 dropout layers of 10% each.
 
 ## Components and pipelines
 First made indiviudal components and pipelines and then downloaded it and did the whole pipeline process and automation through cli.
