@@ -98,6 +98,10 @@ The model is published as a versioned GitHub Release for easy access.
 The entire process runs fully automatically with minimal manual steps after pushing to GitHub.
 
 Every push and change to the code creates a new release of model with the number prefix at the end automatically generated.
+![image](https://github.com/user-attachments/assets/7ab7523a-04ff-4716-8f7e-2853f4a72e2a)
+
+![image](https://github.com/user-attachments/assets/931445e3-2906-4f7d-b734-e4ad77e0894d)
+
 
 ![image](https://github.com/user-attachments/assets/1adc3203-72ff-42c5-9971-656e57b577c6)
 
