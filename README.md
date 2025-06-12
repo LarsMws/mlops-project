@@ -71,6 +71,34 @@ components
 Working pipeline
 ![image](https://github.com/user-attachments/assets/a4f8f2e5-93a8-4cc7-859d-1b42f1d0637f)
 
+### Github Actions
+## Task 3.1 – Automatically retrain the model
+First, a Service Principal account was created and its credentials were added to the GitHub repository as a secret (AZURE_CREDENTIALS).
+
+The model is retrained automatically whenever the source code is updated on the main branch.
+
+The GitHub Actions workflow sets up the environment, components, and compute automatically.
+
+If the compute already exists or is running, this is detected to avoid duplication (continues on error if it is running cause ml azuere gives error for this can stop the action incompleted).
+
+If the compute is stopped, it is started; otherwise, it continues as-is.
+
+The compute start step uses continue-on-error to ensure the pipeline proceeds even if starting fails.
+
+Compute resources are shut down automatically by Azure after use.
+
+
+## Task 3.2 – Automatically deploy the new model
+After training, the model is automatically registered in Azure ML.
+
+The latest model version is downloaded and packaged as a ZIP file.
+
+The model is published as a versioned GitHub Release for easy access.
+
+The entire process runs fully automatically with minimal manual steps after pushing to GitHub.
+
+
+
 
 ## Task 2: Frontend, FastAPI and Deployment
 ### Frontend
