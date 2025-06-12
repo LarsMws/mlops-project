@@ -13,7 +13,16 @@ Our project focuses on deploying a handwritten digit classification model traine
 
 
 ## Task 1: Cloud AI Services
-> TODO (Sadiksha)
+### Dataset 
+- mnist dataset 2, 7, 8 all of them around 1450 images of png
+- ![image](https://github.com/user-attachments/assets/ed775aad-5fea-48f4-8d9b-fc8854f8c402) 
+
+
+### Preprocessing
+This script takes a folder full of .png images and prepares them for training a simple AI model. It goes through each image, removes any transparency, shrinks it down to 28 by 28 pixels, and saves it as a .jpg file in a new folder. This makes the images ready to be used in models like those that recognize handwritten digits
+
+### train-testsplit
+This script takes one or more folders of .jpg images (each folder representing a different digit), mixes the images randomly, and splits them into training and testing sets based on the percentage you give (we have used 80 training and 20 as usual). It then saves the images into new folders containing the label name. 
 
 
 
