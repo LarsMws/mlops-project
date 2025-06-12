@@ -1,7 +1,7 @@
 # MLOps Project Report
 ## GitHub Repositories
-- [Main repository](https://github.com/LarsMws/mlops-project) (current)
-- [Azure ML resource repository](https://github.com/sadiksha99/Mlops_project_Azure_ML)
+- [Main repository](https://github.com/LarsMws/mlops-project) (current for the front end and api)
+- [Azure ML resource repository](https://github.com/sadiksha99/Mlops_project_Azure_ML) (for the part of Azure ML)
 
 
 ## Project Overview
