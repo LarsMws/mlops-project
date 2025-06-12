@@ -16,6 +16,7 @@ Our project focuses on deploying a handwritten digit classification model traine
 > TODO (Sadiksha)
 
 
+
 ## Task 2: Frontend, FastAPI and Deployment
 ### Frontend
 
