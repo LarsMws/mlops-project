@@ -151,9 +151,6 @@ Since we're only using a single endpoint and the API doesn't have to be availabl
 
 
 ## Task 3: Automation & CI/CD
-### Azure ML
-> TODO: training and github releases (Sadiksha)
-> hier ook best bespreken van versioning
 
 ### Frontend & API
 When something is pushed to the `main` branch of this repository, a workflow triggers which builds the Docker images for the frontend and api, and then pushes them to Dockerhub. Consecutively, a job gets executed on a self-hosted github runner which rolls out the new images to kubernetes.
