@@ -177,3 +177,5 @@ We originally planned to use a persistent volume for the model and mount this to
 - Learned that we should use a linux VM for Docker in the future
 
 - Sometimes, even after deleting a compute instance, Azure doesn’t fully remove it internally. I couldn’t create a new compute in the ml-ops-project because I had previously used a repository called mlops-demo. Even though I had deleted everything, Azure still thought the compute was in use there. I solved it by manually deleting the compute from the mlops-demo project. It took me a full day to figure this out.
+
+- every job needs unique name it gives you error if you try to make job with same name that you previously ran.
